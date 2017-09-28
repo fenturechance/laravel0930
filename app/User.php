@@ -26,4 +26,21 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //檔案：APP/user.php
+    public function post(){
+        return $this->hasOne('App\Post','user_id');
+                                    //user_id其實是預設值
+    }
+    
+    //檔案：APP/user.php
+    public function posts(){
+        return $this->hasMany('App\Post');
+    } 
+    //檔案：APP/user.php
+    public function roles(){
+        // return $this->belongsToMany('App\Role','user_roles','user_id','role_id');
+        //若表格命名為role_user，則可以使用預設值，不用上面那行
+        return $this->belongsToMany('App\Role');
+    }
 }
