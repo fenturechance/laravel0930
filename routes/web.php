@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/aa', function () {
+    return 'aa';
+});
+
+
 // Route::get('/insert', function () {
 //    DB::insert('insert into posts(title,content) values(?,?)',['欣欣新的文章標題','欣欣新的文章內容']);
 // });
