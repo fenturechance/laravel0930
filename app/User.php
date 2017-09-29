@@ -41,6 +41,6 @@ class User extends Authenticatable
     public function roles(){
         // return $this->belongsToMany('App\Role','user_roles','user_id','role_id');
         //若表格命名為role_user，則可以使用預設值，不用上面那行
-        return $this->belongsToMany('App\Role');
+        return $this->belongsToMany('App\Role')->withPivot('created_at');
     }
 }

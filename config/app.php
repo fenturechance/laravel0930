@@ -63,8 +63,8 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
-
-    'timezone' => 'UTC',
+    //檔案：config/app.php
+    'timezone' => 'Asia/Taipei',
 
     /*
     |--------------------------------------------------------------------------

@@ -90,3 +90,23 @@ Route::get('/user/{id}/role', function($id) {
             //選出這個user //找出他的階級
      return  $user;
 });
+
+//檔案：routes/web.php
+
+Route::get('user/pivot', function() {
+    $user = User::find(1);
+    foreach ($user->roles as $role) {
+        return $role->pivot->created_at;
+    }
+});
+
+//檔案：routes/web.php
+
+use App\Country;
+
+Route::get('/user/country', function() {
+    $country=Country::find(2);
+    foreach ($country->posts as $post) {
+        return $post->title;
+    }
+});
