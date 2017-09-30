@@ -43,4 +43,17 @@ class User extends Authenticatable
         //若表格命名為role_user，則可以使用預設值，不用上面那行
         return $this->belongsToMany('App\Role')->withPivot('created_at');
     }
+
+    //檔案：app/user.php
+    public function photos(){
+        return $this->morphMany('App\Photo','imageable');
+    }
+    //檔案：app/user.php
+    public function getNameAttribute($value){
+        return ucfirst($value);
+    }
+    //檔案：app/user.php
+    public function setNameAttribute($value){
+        $this->attributes['name']=strtoupper($value);
+    }
 }
