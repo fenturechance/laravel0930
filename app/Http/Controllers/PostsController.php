@@ -10,7 +10,7 @@ class PostsController extends Controller
 {
     //檔案：app/http/controllers/postscontroller.php
     public function index(){
-        return '連到囉';
+        return view('posts.index');
     }
     public function create(){
     	return view('posts.create');
